@@ -34,23 +34,37 @@ typedef struct s_env //mega struct pour le projet mlx car pas acces a la loop
 
 void	put_pixel(t_env *e, int x, int y, int color)
 {
+	int a, b, c;
 
-	(void)x;
-	(void)y;
-	(void)color;
+	// (void)x;
+	// (void)y;
+	// (void)color;
 
-	*(int *)&e->pix_buff[y * e->len_line + x * e->bpp / 8] = color;
+	// *(int *)&e->pix_buff[y * e->len_line + x * e->bpp / 8] = color;
 
 	// char	(*segments)[phnum][phentsize] = NULL;
 
-	// int (*buff)[e->len_line][401]; //variably-modified type system, syntactic sugar
+	int (*buff)[e->len_line][1]; //variably-modified type system, syntactic sugar
 	// int (*buff)[97890879087][]; //variably-modified type system, syntactic sugar
 
+	// char (*buff)[e->len_line][e->bpp/8]; //variably-modified type system, syntactic sugar
+
+	// char a[2][3]
+
+	// a[0][0] a[0][1] a[0][2] a[1][0] a[1][1] a[1][2] 
+
+	while (i < 19) {
+		
+
+	}
+
+	int (*magic)[WIN_Y][e->len_line] = e->pix_buff;
+
+	(*magic)[y][x] = color;
 
 	// buff = (void *)e->pix_buff; void ????
-	// buff = (int(*)[e->len_line][401])e->pix_buff;
-
-	// (*buff)[y][x] = color;
+	// buff = (int(*)[e->len_line][1])e->pix_buff;
+	// buff = (char(*)[e->len_line][e->bpp/8])e->pix_buff;
 }
 
 int 	key_hit(int keycode, t_env *e)
