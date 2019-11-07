@@ -25,7 +25,7 @@ typedef struct s_env //mega struct pour le projet mlx car pas acces a la loop
 	void *image;
 	char *pix_buff;
 	int  bpp;
-	int32_t  len_line;
+	int  len_line;
 	int  endian;
 	int  up_down;
 	int  left_right;
@@ -53,12 +53,12 @@ void	put_pixel(t_env *e, int x, int y, int color)
 
 	// a[0][0] a[0][1] a[0][2] a[1][0] a[1][1] a[1][2] 
 
-	while (i < 19) {
+	// while (i < 19) {
 		
 
-	}
+	// }
 
-	int (*magic)[WIN_Y][e->len_line] = e->pix_buff;
+	int (*magic)[e->len_line][WIN_X] = e->pix_buff;
 
 	(*magic)[y][x] = color;
 
